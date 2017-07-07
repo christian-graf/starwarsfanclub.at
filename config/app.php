@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'RL - Lothal Base'),
+    'name' => env('APP_NAME', 'Star Wars - Fanclub AT'),
 
     /*
     |--------------------------------------------------------------------------

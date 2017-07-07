@@ -86,6 +86,6 @@ return [
     |
     */
 
-    'prefix' => 'lothal_base',
+    'prefix' => 'sw',
 
 ];
