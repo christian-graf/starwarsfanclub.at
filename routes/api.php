@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -11,9 +13,12 @@
 |
 */
 
-use Illuminate\Http\Request;
+/* @var \Illuminate\Routing\Router $router */
 
-/** @var \Illuminate\Routing\Router $router */
+$router->get('/api', function () {
+    return response()->json('welcome');
+});
+
 $router->get('/user', function (Request $request) {
     return $request->user();
 });

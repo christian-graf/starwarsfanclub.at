@@ -12,6 +12,18 @@
 */
 
 /** @var \Illuminate\Routing\Router $router */
+$router->get('/api', function () {
+    return response()->json('welcome');
+});
+
 $router->get('/', function () {
     return view('welcome');
 });
+
+$router->get('/imprint', function () {
+    return view('imprint');
+});
+
+Auth::routes();
+
+$router->get('/home', 'HomeController@index')->name('home');

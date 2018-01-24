@@ -13,7 +13,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
     }
 
     /**
@@ -25,15 +24,12 @@ class AppServiceProvider extends ServiceProvider
     {
         // register local development providers
         if ($this->app->environment() == 'local') {
-
             // recommended to support your IDE (e.g. PHPStorm) with documentation while developing
             // use artisan to build the ide helper files:
             // shell# php artisan ide-helper:generate
             // shell# php artisan ide-helper:meta
-            $this->app->register('Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider');
 
-            // recommended dev-tool
-            $this->app->register('Barryvdh\\Debugbar\\ServiceProvider');
+            $this->app->register('Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider');
         }
     }
 }

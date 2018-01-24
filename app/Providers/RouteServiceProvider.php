@@ -17,13 +17,6 @@ class RouteServiceProvider extends ServiceProvider
     protected $namespace = 'App\Http\Controllers';
 
     /**
-     * Namespace for api routes.
-     *
-     * @var string
-     */
-    protected $apiNamespace = 'App\Http\Controllers\Api';
-
-    /**
      * Define your route model bindings, pattern filters, etc.
      *
      * @return void
@@ -35,8 +28,6 @@ class RouteServiceProvider extends ServiceProvider
 
     /**
      * Define the routes for the application.
-     *
-     * @param \Illuminate\Routing\Router $router
      *
      * @return void
      */
@@ -51,15 +42,13 @@ class RouteServiceProvider extends ServiceProvider
      *
      * These routes all receive session state, CSRF protection, etc.
      *
-     * @param \Illuminate\Routing\Router $router
-     *
      * @return void
      */
     protected function mapWebRoutes(Router $router)
     {
         $router->group([
-            'middleware' => 'web',
             'namespace' => $this->namespace,
+            'middleware' => 'web',
         ], function ($router) {
             require base_path('routes/web.php');
         });
@@ -70,15 +59,13 @@ class RouteServiceProvider extends ServiceProvider
      *
      * These routes are typically stateless.
      *
-     * @param \Illuminate\Routing\Router $router
-     *
      * @return void
      */
     protected function mapApiRoutes(Router $router)
     {
         $router->group([
-            'middleware' => ['api', 'auth:api'] ,
-            'namespace' => $this->apiNamespace,
+            'namespace' => $this->namespace,
+            'middleware' => 'api',
         ], function ($router) {
             require base_path('routes/api.php');
         });
